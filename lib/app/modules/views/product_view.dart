@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/app/modules/controllers/ProductController.dart';
 import 'package:getx_app/app/routes/app_pages.dart';
+import 'package:getx_app/app/services/theme_service.dart';
 
 class ProductView extends StatelessWidget {
   final ProductController productController = Get.find<ProductController>();
@@ -26,6 +27,11 @@ class ProductView extends StatelessWidget {
                 }
               },
               icon: const Icon(Icons.language)),
+          IconButton(
+              onPressed: () {
+                ThemeService().switchTheme();
+              },
+              icon: const Icon(Icons.brightness_6)),
         ],
       ),
       body: Obx(() {
@@ -77,7 +83,7 @@ class ProductView extends StatelessWidget {
                               product.title,
                               style: const TextStyle(
                                 fontSize: 16,
-                                fontWeight: FontWeight.w600,
+                                //fontWeight: FontWeight.w600,
                               ),
                             ),
                             const SizedBox(height: 4),

@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:getx_app/app/modules/controllers/cart_controller.dart';
 import 'package:getx_app/app/routes/app_pages.dart';
 import 'package:getx_app/app/services/cart_services.dart';
+import 'package:getx_app/app/services/theme_service.dart';
 import 'package:getx_app/app/services/translation.dart';
 
 void main() async {
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
       translations: AppTranslations(),
       locale: const Locale('en', 'us'),
       fallbackLocale: const Locale('en', 'us'),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeService().theme,
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.PRODUCT,
       getPages: AppPages.routes,
